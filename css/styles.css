@@ -89,3 +89,74 @@ header {
         background-color: #FFF;
     }
 }
+
+/* INICIO DE BANNER */
+.mainbanner{
+    position: relative; 
+    padding: 24em 14em;
+    /*baclground-color:var(--colorSecundario); */
+    background: linear-gradient(to right, rgb(0, 183, 255),rgb(123, 255, 0));
+    top: 61px;
+}
+.mainbanner::after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top:0;
+    left: 0;
+    background-color: var(--colorsecundario);
+    mix-blend-mode:color;
+    opacity: .2;
+}
+.mainbanner__img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: .2;
+}
+
+.container{
+    width: 100%;
+    margin: auto;
+    z-index: 20;
+    position: relative;
+}
+
+.centrado{
+    display: block;
+    margin: auto;
+}
+
+.mainbanner__data {
+    text-align: center;
+
+}
+
+.mainbanner__titulo{
+    color: #FFF;
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 2.5em;
+
+
+}
+.mainbanner__parrafo{
+    color: #FFF;
+    font-family: 'Poppins';
+    font-size: 1.2em;
+}
+.mainbanner__boton{
+    background-color: var(--colorprimario);
+    color: #fff;
+    padding: 1em 1.2em;
+    border-radius: 8em;
+    text-decoration: none;
+    font-weight: 500;
+    font-family: 'Poppins';
+}
+
+/* FIN DE BANNER */
