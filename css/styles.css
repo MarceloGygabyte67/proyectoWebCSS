@@ -246,3 +246,31 @@ header {
 
 
 /* FIN DE CARDS */
+
+
+/*INICIO DE FOOTER */
+footer{
+    background-color: var(--colorterciario);
+    color: #FFF;
+    padding: 3em 0;
+}
+
+.iconos-pie{
+    font-size: 3em;
+}
+.iconos-pie:hover{
+    color: var(--colorprimario);
+}
+.pie, .info{
+    font-family: 'Poppins';
+    font-weight: 400;
+    font-size: 1em;
+}
+.derechos{
+    background-color: var(--colorparrafos);
+    color: #FFF;
+    font-family: 'Poppins';
+    padding: 1em 0;
+}
+
+/*FIN DE FOOTER*/
