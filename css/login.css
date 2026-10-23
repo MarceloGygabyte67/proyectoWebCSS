@@ -10,13 +10,14 @@
     --colorBordes: #DFE0E0; 
 }
 
-/* SELECTOR UNIVERSAL */
+/* SELECTOR UNIVERSAL (Corregido: era un asterisco *) */
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     background-image: url(../img/fondo-login.jpg);
     background-size: cover;
 }
@@ -69,10 +70,10 @@ header {
 }
 
 @media screen and (max-width: 1023px) {
-
-    .menu{
+    .menu {
         flex-direction: column;
     }
+
     .menu__logo {
         display: flex;
         flex-direction: row;
@@ -88,24 +89,25 @@ header {
     }
 
     .menu__enlaces {
-        width:  %;
+        width: 100%; /* Corregido: antes decía "width:  %;" */
         display: flex;
         flex-direction: column;
         background-color: #FFF;
     }
 }
-/*INICIO DEL FORMULARIO*/
+
+/* INICIO DEL FORMULARIO */
 
 form {
     padding: 2.5rem 2rem;
     background-color: white;
-    max-width: 420px; /* Ancho estándar de tarjeta de login */
+    max-width: 420px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-    margin: 40px auto;
+    margin: 120px auto 40px auto; /* Margen superior amplio para no quedar tapado por el header fixed */
     border-radius: 8px;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centra el logo y la caja de inputs */
+    align-items: center;
 }
 
 /* Centrado y tamaño del logo */
@@ -165,7 +167,7 @@ input[type="password"] {
 
 /* Enlace: Rojo por defecto y Azul al pasar el puntero */
 .enlace-olvido {
-    color: var(--colorprimario); /* Rojo */
+    color: var(--colorprimario);
     text-decoration: none;
     font-size: 0.95em;
     text-align: center;
@@ -175,8 +177,9 @@ input[type="password"] {
 }
 
 .enlace-olvido:hover {
-    color: var(--colorsecundario); /* Azul */
+    color: var(--colorsecundario);
     text-decoration: underline;
 }
 
 /* FIN DEL FORMULARIO */
+/*hola*/
