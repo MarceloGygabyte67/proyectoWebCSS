@@ -1,0 +1,223 @@
+/* ==========================================================
+   VARIABLES DE CSS
+   ========================================================== */
+:root {
+  /* Colores Corporativos */
+  --primary-color: #e30613;
+  --primary-hover: #c4000c;
+  --bg-input: #f4f5f7;
+  --border-input: #e2e4e8;
+  --text-dark: #212529;
+  --text-muted: #6c757d;
+  --text-label: #8c939d;
+
+  /* Estados de Notificación */
+  --color-error-bg: #ffebee;
+  --color-error-border: #ef9a9a;
+  --color-error-text: #c62828;
+  --color-success-bg: #e8f5e9;
+  --color-success-border: #a5d6a7;
+  --color-success-text: #2e7d32;
+
+  /* Geometría y Tipografía */
+  --radius-pill: 50px;
+  --radius-card: 6px;
+  --font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--text-dark);
+  background-color: #ffffff;
+  overflow-x: hidden;
+}
+
+/* ==========================================================
+   COLUMNA IZQUIERDA (IMAGEN DE LA CIUDAD)
+   ========================================================== */
+.city-side-container {
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background-color: #d8c3b7;
+}
+
+.city-side-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* ==========================================================
+   COLUMNA DERECHA (LOGIN)
+   ========================================================== */
+.login-wrapper {
+  width: 100%;
+  max-width: 410px;
+  padding: 15px;
+}
+
+.brand-logo-img {
+  max-height: 52px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Cajas de inputs personalizadas */
+.input-box {
+  background-color: var(--bg-input);
+  border: 1px solid var(--border-input);
+  border-radius: var(--radius-card);
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: border-color 0.2s, background-color 0.2s;
+}
+
+.input-box label {
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--text-label);
+  display: block;
+  margin-bottom: 2px;
+  line-height: 1;
+}
+
+.input-box input {
+  background: transparent;
+  border: none;
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  padding: 0;
+  width: 100%;
+}
+
+.input-box input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.input-box:focus-within {
+  background-color: #ffffff;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(227, 6, 19, 0.12);
+}
+
+.input-box-icon {
+  color: var(--primary-color);
+  font-size: 1.15rem;
+  padding-left: 8px;
+}
+
+/* ==========================================================
+   VALIDACIÓN PURA EN CSS (SIN JS)
+   ========================================================== */
+
+/* Borde rojo en el campo si el dato no cumple el patrón */
+.input-box:has(input:user-invalid) {
+  border-color: var(--color-error-text) !important;
+  background-color: #fff8f8;
+}
+
+/* Estructura común de los avisos */
+.alert-feedback {
+  display: none;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.2rem;
+  animation: slideFade 0.25s ease-in-out;
+}
+
+.alert-error {
+  background-color: var(--color-error-bg);
+  border: 1px solid var(--color-error-border);
+  color: var(--color-error-text);
+}
+
+.alert-success {
+  background-color: var(--color-success-bg);
+  border: 1px solid var(--color-success-border);
+  color: var(--color-success-text);
+}
+
+/* Condición Error: si algún campo es inválido tras ser tocado */
+form:has(input:user-invalid) .alert-error {
+  display: flex !important;
+}
+
+/* Condición Éxito: usuario correcto, clave correcta y captcha marcado */
+form:has(#usuario:valid):has(#clave:valid):has(#captcha:checked) .alert-success {
+  display: flex !important;
+}
+
+/* Al cumplirse el éxito se oculta cualquier alerta de error */
+form:has(#usuario:valid):has(#clave:valid):has(#captcha:checked) .alert-error {
+  display: none !important;
+}
+
+@keyframes slideFade {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==========================================================
+   SWITCH, ENLACES Y BOTÓN PRINCIPAL
+   ========================================================== */
+.form-switch .form-check-input {
+  width: 2.3em;
+  height: 1.25em;
+  cursor: pointer;
+}
+
+.form-switch .form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.link-credentials {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+.link-credentials:hover {
+  color: var(--primary-color);
+}
+
+.btn-login {
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: var(--radius-pill);
+  padding: 10px 0;
+  border: none;
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.btn-login:hover {
+  background-color: var(--primary-hover);
+  color: #ffffff;
+}
+
+.btn-login:active {
+  transform: scale(0.99);
+}
